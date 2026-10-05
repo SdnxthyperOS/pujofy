@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    background-color: #FAF7F2;
+    color: #2B1B15;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* Fluid Typography Utilities */
+.fluid-h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.15;
+}
+
+.fluid-h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.2;
+}
+
+.fluid-h3 {
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  line-height: 1.25;
+}
+
+.fluid-p {
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem);
+}
+
+/* Safe Area Insets for Mobile */
+.safe-bottom-padding {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 1rem));
+}
+
+.safe-bottom-margin {
+  margin-bottom: max(1rem, env(safe-area-inset-bottom, 1rem));
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #E9DED2;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C59A62;
+}
+
+/* MapLibre Canvas Container Sizing */
+.maplibregl-map {
+  width: 100% !important;
+  height: 100% !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+.maplibregl-canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Subtle Shimmer Skeleton Animation */
+@keyframes warmShimmer {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.9; }
+  100% { opacity: 0.5; }
+}
+
+.animate-warm-shimmer {
+  animation: warmShimmer 1.8s infinite ease-in-out;
+}

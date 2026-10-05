@@ -1,0 +1,29 @@
+{
+  "name": "pujofy-api",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@fastify/cors": "^9.0.1",
+    "@pujofy/scoring": "*",
+    "@pujofy/types": "*",
+    "dotenv": "^16.4.7",
+    "fastify": "^4.28.1",
+    "fastify-plugin": "^4.5.1",
+    "pg": "^8.13.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/pg": "^8.11.10",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

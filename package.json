@@ -1,0 +1,28 @@
+{
+  "name": "pujofy-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Smart Puja pandal-hopping and recommendation platform",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=packages/types && npm run build --workspace=packages/scoring && npm run build --workspace=apps/api && npm run build --workspace=apps/web",
+    "test": "vitest run --workspace vitest.workspace.ts",
+    "test:watch": "vitest --workspace vitest.workspace.ts",
+    "dev:api": "npm run dev --workspace=apps/api",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "seed": "tsx database/seeds/seed.ts",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "sharp": "^0.35.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@pujofy/types": ["../types/dist/index.d.ts"]
+    }
+  },
+  "include": ["src/**/*"]
+}

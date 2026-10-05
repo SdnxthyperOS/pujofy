@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@pujofy/types": ["../../packages/types/dist/index.d.ts"],
+      "@pujofy/scoring": ["../../packages/scoring/dist/index.d.ts"]
+    }
+  },
+  "include": ["src/**/*"]
+}
